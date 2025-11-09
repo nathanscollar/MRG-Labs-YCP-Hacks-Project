@@ -53,7 +53,7 @@ def plot_figure_plotly(baseline_df, df, baseline_file_name, selected_file_name):
         yaxis_title="A",
         xaxis=dict(range=[4000, 500], autorange=False),
         yaxis=dict(tick0=0, dtick=0.5, range=[0,6]),
-        legend=dict(orientation="h", yanchor="bottom", y=-0.2,           
+        legend=dict(orientation="h", yanchor="bottom", y=-0.5,           
                     xanchor="center", x=0.5,
                     font=dict(size=12, family="Arial, sans-serif", color="black")
                    )
@@ -184,7 +184,7 @@ if selected_file_name:
             
                 baseline_df, df = clean_data(baseline_df, df)
 
-                fig = plot_figure_plotly(baseline_df, df, baseline_file_name, selected_file_name)
+                fig = plot_figure_plotly(baseline_df, df, baseline_file_name, file)
                 img_buffer = BytesIO()
                 img_bytes = fig.to_image(format="png")
                 img_buffer.write(img_bytes)
